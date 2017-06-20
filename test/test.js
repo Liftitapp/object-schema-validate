@@ -45,7 +45,7 @@ describe('Validator validate :)', function() {
       user: {
         email: [
           { valid: (schema) => (schema.indexOf('@') != -1), error: 'It should be a valid email' },
-          { valid: is.not.empty, error: 'esto es requerido' }
+          { valid: is.not.empty, error: 'It is required' }
         ]
       }
     })
@@ -55,6 +55,16 @@ describe('Validator validate :)', function() {
   })
 
   it('should work with deep objects', function() {
+
+    var expectedResult = {
+      terms_of_service: [ 'Please accept terms of service' ],
+      user:
+       { email: [ 'Valid email required', 'It is required' ],
+         name: [ 'Name is required' ] },
+      company:
+       { email: [ 'Valid email required', 'It is required' ],
+         name: [ 'Name is required' ] }
+   }
 
     var values = {
       terms_of_service: false,
@@ -68,11 +78,11 @@ describe('Validator validate :)', function() {
     }
 
     var schema = Validator({
-      terms_of_service: [{ valid: is.not.truthy, error: 'debes aceptar los terminos ya tu sa`' }],
+      terms_of_service: [{ valid: is.not.truthy, error: 'Please accept terms of service' }],
       user: {
         email: [
-          { valid: (schema) => (schema.indexOf('@') != -1), error: 'debe ser un email' },
-          { valid: is.not.empty, error: 'esto es requerido' }
+          { valid: (schema) => (schema.indexOf('@') != -1), error: 'Valid email required' },
+          { valid: is.not.empty, error: 'It is required' }
         ],
         name: [{ test(schema) { return typeof schema === "string" && schema.length > 1; },
             error: "Name is required"
@@ -80,8 +90,8 @@ describe('Validator validate :)', function() {
       },
       company: {
         email: [
-          { valid: (schema) => (schema.indexOf('@') != -1), error: 'debe ser un email' },
-          { valid: is.not.empty, error: 'esto es requerido' }
+          { valid: (schema) => (schema.indexOf('@') != -1), error: 'Valid email required' },
+          { valid: is.not.empty, error: 'It is required' }
         ],
         name: [{ test(schema) { return typeof schema === "string" && schema.length > 1; },
             error: "Name is required"
@@ -90,6 +100,6 @@ describe('Validator validate :)', function() {
     })
     schema.validate(values)
     var result = schema.errors
-    expect(result).not.to.be.empty
+    expect(result).to.deep.equal(expectedResult)
   })
 })
