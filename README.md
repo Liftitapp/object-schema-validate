@@ -1,20 +1,20 @@
 # Object Schema Validator
 
-[![Build Status](https://semaphoreci.com/api/v1/liftit/object-schema-validator/branches/master/shields_badge.svg)](https://semaphoreci.com/liftit/object-schema-validator)
+[![Build Status](https://semaphoreci.com/api/v1/liftit/object-schema-validate/branches/master/shields_badge.svg)](https://semaphoreci.com/liftit/object-schema-validate)
 
 A small library that validates objects according to schemas
 It basically receives the `object` and a `schema` and return a new object with errors, otherwise an empty object, It can manage deep objects.
 
 ## Installation
 
-  `npm install object-schema-validator`
+  `npm install object-schema-validate`
 
 ## Usage
 
 - ##### Simple Example
 ``` javascript
     // import
-    var Validator = require('object-schema-validator');
+    var Validator = require('object-schema-validate');
 
     // Give some values
     var values = { email: 'not an email' };
@@ -42,7 +42,7 @@ It basically receives the `object` and a `schema` and return a new object with e
 
 - ##### Advance example with a deep object and using a library ([is.js](http://is.js.org/))
 ``` javascript
-var Validator = require('object-schema-validator');
+var Validator = require('object-schema-validate');
 var is = require('is_js');
 
 var values = {

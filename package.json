@@ -1,6 +1,6 @@
 {
-  "name": "object-schema-validator",
-  "version": "1.0.0",
+  "name": "object-schema-validate",
+  "version": "1.0.1",
   "description": "validates an object according to a schema returning an empty object if valid, otherwise an error object with the same structure",
   "main": "lib/validator.js",
   "scripts": {
@@ -22,11 +22,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/liftitapp/object-schema-validator"
+    "url": "https://github.com/liftitapp/object-schema-validate"
   },
   "license": "MIT",
   "keywords": [
     "object-schema-validator",
+    "object-schema-validate",
     "js",
     "validation",
     "redux form"
