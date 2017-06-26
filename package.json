@@ -1,6 +1,6 @@
 {
   "name": "object-schema-validate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "validates an object according to a schema returning an empty object if valid, otherwise an error object with the same structure",
   "main": "dist/validator.js",
   "scripts": {
