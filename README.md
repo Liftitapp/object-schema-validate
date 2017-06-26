@@ -1,6 +1,6 @@
 # Object Schema Validator
 
-[![Build Status](https://semaphoreci.com/api/v1/liftit/object-schema-validate/branches/master/shields_badge.svg)](https://semaphoreci.com/liftit/object-schema-validate)
+[![Build Status](https://semaphoreci.com/api/v1/johaneto/object-schema-validate/branches/master/shields_badge.svg)](https://semaphoreci.com/johaneto/object-schema-validate)
 
 A small library that validates objects according to schemas
 It basically receives the `object` and a `schema` and return a new object with errors, otherwise an empty object, It can manage deep objects.
